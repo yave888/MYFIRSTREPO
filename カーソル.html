@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>カーソル隠すよ</title>
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+
+    <style>
+        #main_opt {
+            width: 1000px;
+            height: 80px;
+            background : #ccc;
+            color:  #000;
+        }
+        #sub_opt {
+            width: 1000px;
+            height: 80px;
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>領域の表示と非表示</h1>
+    <div id="main_opt">
+        <p>ここが標準の表示域</p>
+    </div>
+    <div id="sub_opt">
+        <p>ここはマウス操作の影響を受けません。カーソルが領域外に出ると閉じます</p>
+    </div>
+        <p>ここはマウス操作の影響を受けません。隠れている領域が現れると下にズレます・</p>
+
+    <script>
+        $(function(){
+            $("#sub_opt").hide();
+        });
+        $("#main_opt").on("mouseover", function(){
+            $("#sub_opt").show("slow")
+        });
+        $("#sub_opt").on("mouseleave", function(){
+            $("#sub_opt").hide("slow");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <title>cats&pussy</title>
+    
+    <style>
+        #main_opt {
+            width: 500px;
+            height:100px;
+            background: #ccc;
+            color: #000;
+            padding: 0.5em 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>画像の切り替え</h1>
+    <div id="main_opt">
+        <p>表示する画像を選択してください</p>
+        <form><input class="img_radio" type="radio" name="img_select" value="yosi" checked />genbaneko.png
+        <input class="img_radio" type="radio" name="img_select" value="space" />space.neko.png </form>
+    </div>
+
+    <div><img src="genbaneko.png" id="img_canvas"></div>
+
+    <script>
+        $(".img_radio").on("click", function(){
+            img_index = $("input[name='img_select']:checked").val();
+            switch(img_index) {
+                case "yosi":
+                $("#img_canvas").attr("src", "genbaneko.png");
+                break;
+            case "space":
+                $("#img_canvas").attr("src", "space.neko.png");
+                break;
+                default:
+                    $("#img_canvas").attr("src", "genbaneko.png");
+                break
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoりすと</title>
+</head>
+<body>
+    <h1>Todo-list</h1>
+
+    <form>
+        <input type="text" id="nyaa">
+        <button id="nyaa2">作成</button>
+    </form>
+
+    <div id="nyaa3">
+        changeTextClass
+        <button id="btn">削除</button>
+    </div>
+
+
+    <script>
+        document.querySelector("#btn").addEventListener('click', () =>
+        {
+            let element = document.getElementById("nyaa3");
+            element.remove();
+        });
+        
+        document.querySelector('nyaa')
+    </script>
+</body>
+</html>

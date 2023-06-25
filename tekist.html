@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>画面反映</title>
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+
+    <style>
+        #txt_in {
+            font-size: 20px;
+        }
+
+        #txt_out {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="unti">入力されたテキストをHTML内にリアルタイムで表示</h1>
+    <form>
+        <input type="text" id="txt_in" />
+        <input type="text" value="こんにちは">
+    </form>
+    <p>テキストボックスに入力すると、この下にテキストが表示されます</p>
+    <p id="txt_out">入力したテキストがここに表示されます</p>
+    <script>
+        $("#txt_in").on("keyup", function(event) {
+            $("#txt_out").text($("#txt_in").val());
+        });
+
+        output_text = $("#txt_in").val();
+        $("#txt_out").text(output_text);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <title>skywork</title>
+
+    <style>
+        .big_font{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>年齢確認</h1>
+    <div id="main_opt">
+        <p>あなたは18歳以上ですか？</p>
+        <form>
+            <input type="checkbox" name="agress" id="agree" />
+            <span class="big_font">はい</span>
+            <br>
+            <button id="btn_a" disabled>同意すると押せるようになります</button>
+        </form>
+    </div>
+
+    <script>
+        $("#agree").on("click", function(){
+            if ($("#agree").prop("checked")){
+                $("#btn_a").text("送信できます")
+                $("#btn_a").prop("disabled", false);
+            } else {
+                $("#btn_a").text("同意すると押せるようになります");
+                $("#btn_a").prop("disabled", true);
+            }
+        });
+        $("#btn_a").on("click", function (event){
+            event.preventDefault();
+            return false;
+        });
+    </script>
+    
+</body>
+</html>

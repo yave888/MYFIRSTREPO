@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>サンプル</title>
+    </head>
+
+    <body>
+        <h1>ボタンをテキストで書き換え</h1>
+        <p>ここは変化しません。ここは変化しません。ここは変化しません。</p>
+        <p id="p_1" class="pgroup">
+            id指定ボタンかclass指定ボタンを押すと、ここのテキストが変わります。
+        </p>
+
+        <p class="pgroup">class指定ボタンを押すと、ここのテキストが変わります。</p>
+
+        <form>
+            <button id="btn_1">id指定でテキストを書き換え</button>
+            <button id="btn_2">class指定でテキストを書き換え</button>
+        </form>
+
+            <script>
+                //ここにスクリプトを下記記していきます
+                //id指定書き換えボタン
+                btn_id = document.querySelector("#btn_1");
+                btn_id.addEventListener("click", changeTextId, false);
+
+                //id指定書き換え処理function
+                function changeTextId(event){
+                    event.preventDefault();
+                    new_p1 = document.querySelector("#p_1");
+                    new_p1.innerHTML = "id p_1の中身を書き換えました";
+                    return false; 
+                }
+
+                //class指定書き換えボタン
+                btn_class = document.querySelector("#btn_2");
+                btn_class.addEventListener("click", function(event){
+                    console.log(event);
+                    event.preventDefault();
+                    new_pgroup = document.querySelectorAll(".pgroup");
+                    new_pgroup.forEach(function(ones){
+                        ones.innerHTML = "class pgroupの中身を書き換えました";
+                    });
+                       return false; 
+                    });
+            </script>
+    </body>
+</html>
+ 

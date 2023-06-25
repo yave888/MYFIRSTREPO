@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <title>サンプル</title>
+</head>
+<body>
+    <h1>dataの操作</h1>
+    <form>
+        <input type="checkbox" id="fruit" checked />果物
+        <input type="checkbox" id="vegitables" checked>野菜
+        <br>
+        <input type="number" id="price" />円
+        <select  id="highlow">
+            <option value="lower">以下</option>
+            <option value="upper">以上</option>
+        </select>
+        <button id="btn">絞り込み</button>
+    </form>
+    <h2>販売商品</h2>
+
+    <ul>
+        <li data-kind="野菜" data-price="70">トマト</li>
+        <li data-kind="果物" data-price="4500">メロン</li>
+        <li data-kind="野菜" data-price="250">大根</li>
+        <li data-kind="野菜" data-price="170">キャベツ</li>
+        <li data-kind="果物" data-price="280">リンゴ</li>
+        <li data-kind="果物" data-price="90">みかん</li>
+    </ul>
+
+
+
+    <script>
+        $("#btn").on("click", function (event){
+        event.preventDefault(); //ボタンの送信抑制
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <title>sky</title>
+
+    <style>
+        .dmy_btn{
+            display: inline-block;
+            width: 25%;
+            border: outset;
+            cursor: pointer;
+            padding: 5px lem;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSSの動的変更</h1>
+    <div id="style_1" class="dmy_btn">フォントを大きく</div>
+    <div id="style_2" class="dmy_btn">背景と文字色を変更</div>
+    <p>この下のdivのCSSが動的に変わります</p>
+    <hr />
+    <div id="target" class="target_div">
+        吾輩は猫である。名前はまだない。どこで生まれたか頓と見当がつかぬ。
+        なんでも薄暗いじめじめした所でにゃーにゃ―泣いていた事だけは記憶している。
+    </div>
+
+    <script>
+        $("#style_1").on("click", function(){
+            $("#target").css("font-size", "2em");
+        });
+
+        $("#style_2").on("click", function(){
+            $("#target").css({
+                color: "#fff",
+                background: "#000",
+            });
+        });
+    </script>
+</body>
+</html>

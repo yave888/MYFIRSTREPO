@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <title>sky</title>
+
+    <style>
+        .dmy_btn{
+            display: inline-block;
+            width: 25%;
+            border: outset;
+            cursor: pointer;
+            padding: 5px lem;
+            background: #ccc;
+        }
+        .pattern_a{
+            font-size: 50px;
+        }
+        .pattern_b {
+            color: #fff;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSSの追加と削除</h1>
+    <div id="style_aon" class="dmy_btn">パターンAを適用</div>
+    <div id="style_aoff" class="dmy_btn">パターンAを撤去</div>
+    <br />
+    
+    <div id="style_bon" class="dmy_btn">パターンBを適用</div>
+    <div id="style_boff" class="dmy_btn">パターンBを撤去</div>
+    <p>この下divのclassが動的に変わります</p>
+    <hr>
+    <div id="target" class="target_div">吾輩は猫である。名前はまだない。どこで生まれたか頓と見当がつかぬ。
+        なんでも薄暗いじめじめしたところでにゃーにゃ―と泣いていた事だけは記憶している。
+    </div>
+
+    <script>
+        $("#style_aon").on("click", function(){
+            $("#target").addClass("pattern_a");
+        });
+
+        $("#style_aoff").on("click", function(){
+            $("#target").removeClass("pattern_a");
+        });
+        
+        $("#style_bon").on("click", function(){
+            $("#target").addClass("pattern_b");
+        });
+
+        $("#style_boff").on("click", function(){
+            $("#target").removeClass("pattern_b");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        #main_opt{
+            width: 250px;
+            height: 80px;
+            background: #ccc;
+            color: #000;
+            border: outset;
+            padding: 0.5em lem;
+        }
+        #sub_opt{
+            width: 250px;
+            height: 80px;
+            background: #000;
+            color: #fff;
+            padding: 0.5em 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>トグル処理に夜領域の表示と非表示</h1>
+    <div id="main_opt">
+        <p>ここをクリックするとサブメニューが出たり消えたりします</p>
+    </div>
+    <div id="sub_opt">
+        <p>ここは通常隠れているサブメニューです。消すには上のグレー領域をクリックしてください</p>
+    </div>
+    <div>
+        <p>ここはマウス操作の影響を受けません。隠れている領域が現れると下にずれます</p>
+    </div>
+
+    <script>
+        $(function(){
+            $("#sub_opt").hide();
+        });
+
+        $("#main_opt").on("click", function(){
+            $("#sub_opt").toggle("fast");
+        });
+    </script>
+</body>
+</html> 

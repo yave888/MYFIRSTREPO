@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>jQueryサンプル</title>
+        <script 
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <h1>ボタンをテキストで書き換え</h1>
+        <p>ここは変化しません。ここは変化しません。ここは変化しません。</p>
+        <p id="p_1" class="pgroup">
+            id指定ボタンかclass指定ボタンを押すと、ここのテキストが変わります。
+        </p>
+
+        <p class="pgroup">class指定ボタンを押すと、ここのテキストが変わります。</p>
+
+        <form>
+            <button id="btn_1">id指定でテキストを書き換え</button>
+            <button id="btn_2">class指定でテキストを書き換え</button>
+        </form>
+
+            <script>
+                $("#btn_1").on("click" , function( ) {
+                    event.preventDefault();
+                    $("#p_1").text("id指定部をjQueryで書き換えました");
+                    return false;  
+                });
+
+
+                $("#btn_2").on("click", function(event){
+                    event.preventDefault();
+                    $(".pgroup").each(function(){
+                        $(this).text("class指定部をjQueryで書き換えました");
+                    });
+                return false;
+                });
+            </script>
+    </body>
+</html>
+ 
