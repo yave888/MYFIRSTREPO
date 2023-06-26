@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+html {
+  font-size: 16px;
+}
+
+body,html {
+  width: 960px;
+  margin: 1rem auto;
+  font-family: serif;
+}
+
+.task_value {
+  height: 1.5rem;
+}
+
+.task_submit {
+  height: 2rem;
+}
+
+#table {
+  background-color: papayawhip;
+  width: 50%;
+  height: 400px;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
+
+li {
+  margin: 2rem 2rem 2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+</style>
+<body>
+    <h1 id="text">TODOリスト</h1>
+    
+    <form>
+        <input type="text" class="task_value">
+        <button class="task_submit">タスクを登録</button>
+    </form>
+
+    <div id="table">
+        <ul class="task_list"></ul>
+    </div>
+
+    <script>
+        //DOM操作でボタン要素とタスクを表示させるための要素取得
+        const taskValue = document.getElementsByClassName("task_value")[0];
+        const taskSubmit = document.getElementsByClassName("task_submit")[0];
+        const taskList = document.getElementsByClassName("task_list")[0];
+
+        const addTasks = (task) =>{
+            //入力したタスクを追加・表示
+            const listItem = document.createElement('li');  //li要素を作成する変数を定義
+            const showItem = taskList.appendChild(listItem);  //親要素(taskList)の子要素を追加する変数を定義
+            showItem.innerHTML = task; //入力したtaskを表示
+
+            //タスクに削除ボタンを付与
+            const deleteButton = document.createElement("button"); //ボタンを作成する変数を定義
+            deleteButton.innerHTML = "削除"  //ボタンのテキストを削除という文字で表示
+            listItem.appendChild(deleteButton)  //listItemの子要素に追加
+
+            //削除ボタンをクリックし、イベントを発動(タスクが削除)
+            deleteButton.addEventListener("click", event =>{
+            event.preventDefault();
+            deleteTasks(deleteButton);
+        });
+        };
+
+        //削除ボタンにタスクを消す機能を付与
+        const deleteTasks = (deleteButton) =>{
+            const chosenTask = deleteButton.closest("li");
+            taskList.removeChild(chosenTask);  //削除ボタンを押したらdeleteTasks関数が呼び出される
+        };
+
+        //追加ボタンにクリックイベントを付与
+        taskSubmit.addEventListener("click", event =>{
+            event.preventDefault();
+            const task = taskValue.value; //フォームに入力した値を持ってくる
+            addTasks(task);
+            taskValue.value = ''; //ボタンを入力後にフォームを殻にする
+        });
+        
+    </script>
+</body>
+</html>
