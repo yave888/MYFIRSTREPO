@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>アラートテスト</title>
+    <style>
+        /* CSSスタイルの定義 */
+        body {
+            background-color: #333;
+            margin: 0;
+            overflow: hidden;
+        }
+        
+        #cat {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: top 0.5s, left 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="cat">
+        <img src="neko.png" alt="猫のGIF画像">
+    </div>
+
+    <script>
+        // 猫がマウスに追いかける処理
+        document.addEventListener("mousemove", function(event) {
+            var cat = document.getElementById("cat");
+            var x = event.clientX;
+            var y = event.clientY;
+            cat.style.top = y + "px";
+            cat.style.left = x + "px";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activeアラート対応手順書</title>
+</head>
+<body>
+<p>ログイン情報</p>
+<p>鍵の場所：\\ap0601.support.skyarch.jp\UserShare\一時ファイル\m_watanabe\Google</p>
+<p>IPアドレス：18.181.24.145</p>
+
+
+
+    <h1>Activeアラート対応手順書</h1>
+    <ol>
+        <li>サイトが閲覧可能か確認してください</li>
+        <p>ブラウザで以下のURLにアクセスし、サイトが正常に表示されることを確認してください。<br>
+            閲覧が不可能な場合は後続の対応を行ってください。
+        <a href="http://18.181.24.145" target="_blank">http://18.181.24.145</a></p>
+
+        <li>定例コマンドを入力してください</li>
+      <br>
+        
+
+        <li>Apacheのプロセス数を確認してください</li>
+        <br>
+
+        <li>Apacheのサービスのステータスを確認してください</li>
+       
+<br>
+        <li>エラー文などを見つつwebページを閲覧できるようにしてください</li>
+<br>
+        
+
+        <li>webページが閲覧できるようになったら<br>
+            apacheのMaxclientを100に、MinSpareServers/StartServersを10にしてください
+        </li>
+       <br>
+
+        <li>Apacheのプロセス数を確認してください</li>
+<br>
+
+        <li>/var/www/htmlディレクトリのパーミッションを確認してください</li>
+      <br>
+
+        <li>/var/www/htmlディレクトリのパーミッションを読み込みと書き込みだけに設定してください。</li>
+        <!-- <p>/var/www/htmlディレクトリのパーミッションを読み込みと書き込みだけに設定してください。</p> -->
+<br>
+        <li>buri.confとonigiri.confのアクセスログを特定してください<br>
+            また、ログの行数を出してください
+        </li>
+        <p>buri.comとonigiri.comのアクセスログを特定し、ログの行数を確認してください。</p>
+    </ol>
+</body>
+</html>
